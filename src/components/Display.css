@@ -1,0 +1,64 @@
+.display-div {
+  position: absolute;
+  top: 505px;
+  left: 156px;
+  /* $neutralWhite */
+
+  background: #ffffff;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 490px;
+  height: 155px;
+}
+
+.display-distance {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 26px;
+  align-items: center;
+}
+
+.display-text {
+  flex: 1;
+  background: #f4f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 120%;
+  /* or 14px */
+
+  color: #1e2a32;
+}
+
+.display-text p {
+  padding: 0 32px;
+}
+
+.display-distance p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.display-distance h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+
+  text-align: right;
+
+  /* $brandColorSecondary */
+
+  color: #0079ff;
+}
