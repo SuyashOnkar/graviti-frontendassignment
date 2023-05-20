@@ -1,10 +1,9 @@
-import React from 'react';
-import Logo from './Logo';
+import './Navbar.css';
 
 export default function Navbar() {
   return (
     <div className="navbar">
-      <Logo />
+      <div className="navbar-logo"></div>
     </div>
   );
 }

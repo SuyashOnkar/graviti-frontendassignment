@@ -1,0 +1,18 @@
+.hero-text-div {
+  margin-top: 33px;
+  margin-bottom: 33px;
+  width: 560px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.hero-text {
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #1b31a8;
+}

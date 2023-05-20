@@ -1,0 +1,15 @@
+.navbar {
+  height: 80px;
+  background: #ffffff;
+}
+
+.navbar-logo {
+  position: absolute;
+  width: 160px;
+  height: 69px;
+  left: 67px;
+  top: 6px;
+
+  background-image: url('/src/assets/graviti.png');
+  background-size: cover;
+}
