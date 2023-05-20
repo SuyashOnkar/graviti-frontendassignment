@@ -1,0 +1,9 @@
+.inputBox {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+
+.combo-popover {
+  background-color: white;
+}

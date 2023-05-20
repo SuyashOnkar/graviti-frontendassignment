@@ -1,0 +1,26 @@
+.searchBtnDiv button {
+  position: absolute;
+  width: 141px;
+  height: 62px;
+  left: 505px;
+  top: 262px;
+
+  /* $brandColorPrimary */
+
+  background: #1b31a8;
+  border-radius: 32px;
+  border: none;
+
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  /* identical to box height, or 111% */
+
+  text-align: center;
+
+  /* $neutralWhite */
+
+  color: #ffffff;
+}
