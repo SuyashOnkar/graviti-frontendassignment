@@ -67,10 +67,6 @@ export default function Hero() {
     console.log(waypoints);
   }
 
-  // function addWaypoints(waypoint) {
-  //   setWaypoints([{ location: waypoint, stopover: true }]);
-  // }
-
   return (
     <>
       <GoogleMap
