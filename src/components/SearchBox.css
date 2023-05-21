@@ -57,6 +57,7 @@
   .combobox-popover {
     background-color: white;
     overflow: hidden;
+    border-radius: 20px;
 
     z-index: 50;
   }
@@ -67,6 +68,7 @@
 
   .combobox-option {
     cursor: pointer;
+    padding: 20px;
   }
 }
 
@@ -129,16 +131,24 @@
 
   .combobox-popover {
     background-color: white;
-    overflow: hidden;
-
-    z-index: 50;
+    position: absolute;
+    top: 50px;
+    z-index: 20;
+    border-radius: 6px;
   }
 
   .combobox-list {
-    border-radius: 20px;
+    padding: 0;
+    min-width: 250px;
   }
 
   .combobox-option {
+    list-style-type: none;
+    padding: 10px 10px;
     cursor: pointer;
+  }
+
+  .combobox-option:hover {
+    background-color: rgba(0, 0, 0, 0.25);
   }
 }

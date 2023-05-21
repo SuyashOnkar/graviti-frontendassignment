@@ -38,7 +38,9 @@ export default function SearchBox({ name, setLocation }) {
           onChange={(e) => setValue(e.target.value)}
           className="combobox-input"
         />
-        <ComboboxPopover className="combobox-popover">
+        <ComboboxPopover
+          className="combobox-popover"
+          portal={false}>
           <ComboboxList className="combobox-list">
             {status === 'OK' &&
               data.slice(0, 5).map(({ place_id, description }) => (
