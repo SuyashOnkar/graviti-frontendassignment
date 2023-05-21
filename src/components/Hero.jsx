@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import './Hero.css';
-import { GoogleMap, Marker, DirectionsRenderer } from '@react-google-maps/api';
+import { GoogleMap, DirectionsRenderer } from '@react-google-maps/api';
 import SearchBox from './SearchBox';
 import SearchBtn from './SearchBtn';
 import Display from './Display';
@@ -25,12 +25,11 @@ export default function Hero() {
   const [totalStops, setTotalStops] = useState([
     <SearchBox
       setLocation={addWaypoints}
-      name={'Stop'}
+      name="Stop"
     />,
   ]);
 
   function calculateDistance() {
-    console.log(directions);
     let sum = 0;
     directions.routes[0].legs.map((e) => {
       sum += e.distance.value;
@@ -62,9 +61,7 @@ export default function Hero() {
   }, [directions]);
 
   function addWaypoints(waypoint) {
-    console.log('i work');
     setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
-    console.log(waypoints);
   }
 
   return (
@@ -81,7 +78,7 @@ export default function Hero() {
         id="searchDiv">
         <SearchBox
           setLocation={setOrigin}
-          name={'Origin'}
+          name="Origin"
         />
         {totalStops}
 
@@ -92,7 +89,7 @@ export default function Hero() {
 
         <SearchBox
           setLocation={setDestination}
-          name={'Destination'}
+          name="Destination"
         />
       </div>
 

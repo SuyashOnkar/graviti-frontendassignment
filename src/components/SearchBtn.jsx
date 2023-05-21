@@ -22,7 +22,6 @@ export default function SearchBtn({ setDirections, origin, destination, waypoint
       },
       (result, status) => {
         if (status === 'OK' && result) {
-          console.log(result);
           setDirections(result);
         }
       }
@@ -36,19 +35,19 @@ export default function SearchBtn({ setDirections, origin, destination, waypoint
     { value: google.maps.TravelMode.WALKING, label: 'Walking' },
   ];
 
-  function onSelect(e) {
-    setTravelMode(e);
-  }
-
   return (
     <div className="calculateDiv">
       <div className="searchBtnDiv">
-        <button onClick={fetchDirections}>Calculate</button>
+        <button
+          onClick={fetchDirections}
+          type="button">
+          Calculate
+        </button>
       </div>
       <div className="choose-transit-div">
         <Dropdown
           options={options}
-          onChange={onSelect}
+          onChange={(e) => setTravelMode(e)}
           value={travelMode.label}
           placeholder="Select an option"
           className="dropdown"

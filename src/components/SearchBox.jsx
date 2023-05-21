@@ -1,8 +1,7 @@
 import './SearchBox.css';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+import usePlacesAutocomplete from 'use-places-autocomplete';
 import {
   Combobox,
-  ComboboxButton,
   ComboboxList,
   ComboboxPopover,
   ComboboxInput,
@@ -11,7 +10,6 @@ import {
 
 export default function SearchBox({ name, setLocation }) {
   const {
-    ready,
     value,
     setValue,
     suggestions: { status, data },
@@ -21,7 +19,6 @@ export default function SearchBox({ name, setLocation }) {
   const handleSelect = async (address) => {
     setValue(address, false);
     clearSuggestions();
-    console.log(address);
 
     setLocation(address);
   };
