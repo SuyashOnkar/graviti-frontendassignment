@@ -1,35 +1,75 @@
-.searchBtnDiv button {
-  position: absolute;
-  width: 141px;
-  height: 62px;
-  left: 505px;
-  top: 262px;
+@media only screen and (min-width: 768px) {
+  .searchBtnDiv button {
+    position: absolute;
+    width: 141px;
+    height: 62px;
+    left: 505px;
+    top: 262px;
 
-  /* $brandColorPrimary */
+    /* $brandColorPrimary */
 
-  background: #1b31a8;
-  border-radius: 32px;
-  border: none;
+    background: #1b31a8;
+    border-radius: 32px;
+    border: none;
 
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 20px;
-  /* identical to box height, or 111% */
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    /* identical to box height, or 111% */
 
-  text-align: center;
+    text-align: center;
 
-  /* $neutralWhite */
+    /* $neutralWhite */
 
-  color: #ffffff;
+    color: #ffffff;
+  }
+
+  .choose-transit-div {
+    position: absolute;
+    top: 340px;
+    left: 520px;
+  }
 }
 
-.choose-transit-div {
-  position: absolute;
-  top: 340px;
-  left: 520px;
-}
+@media only screen and (max-width: 768px) {
+  .calculateDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.dropdown {
+  .searchBtnDiv {
+  }
+
+  .searchBtnDiv button {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+
+    /* $brandColorPrimary */
+
+    background: #1b31a8;
+    border-radius: 32px;
+    border: none;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    /* identical to box height, or 111% */
+
+    text-align: center;
+
+    /* $neutralWhite */
+
+    color: #ffffff;
+  }
+
+  .choose-transit-div {
+    margin-top: 10px;
+    width: 200px;
+  }
 }

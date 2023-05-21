@@ -41,7 +41,7 @@ export default function SearchBtn({ setDirections, origin, destination, waypoint
   }
 
   return (
-    <div className="searchDiv">
+    <div className="calculateDiv">
       <div className="searchBtnDiv">
         <button onClick={fetchDirections}>Calculate</button>
       </div>

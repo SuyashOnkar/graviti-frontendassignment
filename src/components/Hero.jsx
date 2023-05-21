@@ -8,7 +8,10 @@ import AddStopBtn from './AddStopBtn';
 
 export default function Hero() {
   const center = useMemo(() => ({ lat: 20, lng: 77 }), []);
-  const options = useMemo(() => ({ disableDefaultUI: true, clickableIcons: false }), []);
+  const options = useMemo(
+    () => ({ disableDefaultUI: true, clickableIcons: false, zoomControl: false }),
+    []
+  );
 
   const [directions, setDirections] = useState();
 
@@ -90,6 +93,7 @@ export default function Hero() {
       ) : (
         <Display />
       )}
+      <footer></footer>
     </>
   );
 }
