@@ -1,6 +1,6 @@
 import './Display.css';
 
-export default function Display({ origin, destination, distance }) {
+export default function Display({ origin, destination, distance, eta }) {
   console.log(distance);
   return (
     <div className="display-div">
@@ -14,7 +14,8 @@ export default function Display({ origin, destination, distance }) {
         {distance && (
           <p>
             The distance between <b>{origin}</b> and <b>{destination}</b> via the seleted route is{' '}
-            <b>{distance}</b>.
+            <b>{distance}</b> and <b>ETA</b> is {eta.hours} Hours, {eta.minutes} Minutes and{' '}
+            {eta.seconds} Seconds.
           </p>
         )}
       </div>

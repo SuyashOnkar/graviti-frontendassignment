@@ -20,8 +20,14 @@ export default function Hero() {
   const [waypoints, setWaypoints] = useState([]);
 
   const [distance, setDistance] = useState(0);
+  const [eta, setEta] = useState(0);
 
-  const [totalStops, setTotalStops] = useState(0);
+  const [totalStops, setTotalStops] = useState([
+    <SearchBox
+      setLocation={addWaypoints}
+      name={'Stop'}
+    />,
+  ]);
 
   function calculateDistance() {
     console.log(directions);
@@ -32,21 +38,38 @@ export default function Hero() {
     setDistance(sum);
   }
 
+  function calculateEta() {
+    let sum = 0;
+
+    directions.routes[0].legs.map((e) => {
+      sum += e.duration.value;
+    });
+
+    const totalMinutes = Math.floor(sum / 60);
+
+    const seconds = sum % 60;
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    setEta({ hours, minutes, seconds });
+  }
+
   useEffect(() => {
     if (directions) {
       calculateDistance();
+      calculateEta();
     }
   }, [directions]);
 
-  // function addWaypoints(waypoint) {
-  //   setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
-  // }
-
   function addWaypoints(waypoint) {
-    setWaypoints([{ location: waypoint, stopover: true }]);
+    console.log('i work');
+    setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
+    console.log(waypoints);
   }
 
-  console.log(waypoints);
+  // function addWaypoints(waypoint) {
+  //   setWaypoints([{ location: waypoint, stopover: true }]);
+  // }
 
   return (
     <>
@@ -64,12 +87,12 @@ export default function Hero() {
           setLocation={setOrigin}
           name={'Origin'}
         />
-        <SearchBox
-          setLocation={addWaypoints}
-          name={'Stop'}
-        />
+        {totalStops}
 
-        <AddStopBtn />
+        <AddStopBtn
+          totalStops={totalStops}
+          setTotalStops={setTotalStops}
+        />
 
         <SearchBox
           setLocation={setDestination}
@@ -89,6 +112,7 @@ export default function Hero() {
           origin={origin}
           destination={destination}
           distance={`${(distance / 1000).toFixed(0)} km`}
+          eta={eta}
         />
       ) : (
         <Display />
