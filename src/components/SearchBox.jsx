@@ -27,7 +27,10 @@ export default function SearchBox({ name, setLocation }) {
   return (
     <div className="searchArea">
       <div className="searchArea-name">{name}</div>
-      <Combobox onSelect={handleSelect}>
+      <Combobox
+        onSelect={handleSelect}
+        className="combobox">
+        <div className={name}></div>
         <ComboboxInput
           value={value}
           onChange={(e) => setValue(e.target.value)}
@@ -36,7 +39,7 @@ export default function SearchBox({ name, setLocation }) {
         <ComboboxPopover className="combobox-popover">
           <ComboboxList className="combobox-list">
             {status === 'OK' &&
-              data.slice(0, 3).map(({ place_id, description }) => (
+              data.slice(0, 5).map(({ place_id, description }) => (
                 <ComboboxOption
                   key={place_id}
                   value={description}

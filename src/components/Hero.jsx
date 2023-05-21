@@ -15,6 +15,17 @@ export default function Hero() {
   const [destination, setDestination] = useState();
   const [waypoints, setWaypoints] = useState([]);
 
+  const [distance, setDistance] = useState(0);
+
+  function calculateDistance() {
+    console.log(directions);
+    let sum = 0;
+    directions.routes[0].legs.map((e) => {
+      sum += e.distance.value;
+    });
+    setDistance(sum);
+  }
+
   function addWaypoints(waypoint) {
     setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
   }
@@ -52,13 +63,14 @@ export default function Hero() {
         origin={origin}
         destination={destination}
         waypoints={waypoints}
+        calculateDistance={calculateDistance}
       />
 
       {directions ? (
         <Display
           origin={origin}
           destination={destination}
-          distance={directions.routes[0].legs[0].distance.text}
+          distance={`${(distance / 1000).toFixed(0)} km`}
         />
       ) : (
         <Display />

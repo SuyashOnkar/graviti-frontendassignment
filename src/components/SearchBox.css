@@ -11,12 +11,47 @@
   padding-left: 2px;
 }
 
+.combobox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.combobox .Origin {
+  position: absolute;
+  background-image: url(../assets/origin_icon.svg);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  left: 15px;
+}
+
+.combobox .Stop {
+  position: absolute;
+  background-image: url(../assets/stop_icon.svg);
+  background-repeat: no-repeat;
+
+  width: 16px;
+  height: 16px;
+  left: 15px;
+}
+
+.combobox .Destination {
+  position: absolute;
+  background-image: url(../assets/destination_icon.svg);
+  background-repeat: no-repeat;
+
+  width: 16px;
+  height: 20px;
+  left: 15px;
+}
+
 .combobox-input {
   width: 250px;
   height: 45px;
   border: 1px solid #dcddec;
   border-radius: 6px;
-  padding: 0 8px;
+  padding: 0 12px 0 40px;
 }
 
 .combobox-popover {

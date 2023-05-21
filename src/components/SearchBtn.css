@@ -24,3 +24,12 @@
 
   color: #ffffff;
 }
+
+.choose-transit-div {
+  position: absolute;
+  top: 340px;
+  left: 520px;
+}
+
+.dropdown {
+}
