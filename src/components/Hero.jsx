@@ -32,13 +32,15 @@ export default function Hero() {
     }
   }, [directions]);
 
+  // function addWaypoints(waypoint) {
+  //   setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
+  // }
+
   function addWaypoints(waypoint) {
-    setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
+    setWaypoints([{ location: waypoint, stopover: true }]);
   }
 
   console.log(waypoints);
-
-  //   if (directions) distance = directions.routes[0].legs[0].distance.text;
 
   return (
     <>
@@ -69,7 +71,6 @@ export default function Hero() {
         origin={origin}
         destination={destination}
         waypoints={waypoints}
-        calculateDistance={calculateDistance}
       />
 
       {directions ? (

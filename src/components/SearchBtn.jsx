@@ -3,13 +3,7 @@ import './SearchBtn.css';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-export default function SearchBtn({
-  setDirections,
-  origin,
-  destination,
-  waypoints,
-  calculateDistance,
-}) {
+export default function SearchBtn({ setDirections, origin, destination, waypoints }) {
   const [travelMode, setTravelMode] = useState({
     value: google.maps.TravelMode.DRIVING,
     label: 'Driving',
@@ -24,6 +18,7 @@ export default function SearchBtn({
         optimizeWaypoints: true,
         destination: destination,
         travelMode: travelMode.value,
+        provideRouteAlternatives: true,
       },
       (result, status) => {
         if (status === 'OK' && result) {
