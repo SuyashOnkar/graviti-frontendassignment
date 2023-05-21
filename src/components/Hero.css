@@ -1,16 +1,24 @@
-.gmap {
-  position: absolute;
-  top: 170px;
-  right: 104px;
-  width: 560px;
-  height: 511px;
+@media only screen and (min-width: 768px) {
+  .gmap {
+    position: absolute;
+    top: 170px;
+    right: 104px;
+    width: 560px;
+    height: 511px;
+  }
+
+  .searchDiv {
+    margin-left: 156px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    width: 250px;
+  }
 }
 
-.searchDiv {
-  margin-top: 90px;
-  margin-left: 156px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
+.gmap {
+  min-width: 100vw;
+  height: 550px;
+  margin-top: 50px;
 }

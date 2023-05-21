@@ -1,0 +1,20 @@
+.addStopBtn-div {
+  width: 250px;
+  height: 25px;
+
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.addStopBtn-div .container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.addStop-icon {
+  background: url(../assets/addStop_icon.svg) no-repeat;
+  width: 16px;
+  height: 16px;
+}

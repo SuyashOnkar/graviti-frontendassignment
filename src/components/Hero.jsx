@@ -4,6 +4,7 @@ import { GoogleMap, Marker, DirectionsRenderer } from '@react-google-maps/api';
 import SearchBox from './SearchBox';
 import SearchBtn from './SearchBtn';
 import Display from './Display';
+import AddStopBtn from './AddStopBtn';
 
 export default function Hero() {
   const center = useMemo(() => ({ lat: 20, lng: 77 }), []);
@@ -16,6 +17,8 @@ export default function Hero() {
   const [waypoints, setWaypoints] = useState([]);
 
   const [distance, setDistance] = useState(0);
+
+  const [totalStops, setTotalStops] = useState(0);
 
   function calculateDistance() {
     console.log(directions);
@@ -51,7 +54,9 @@ export default function Hero() {
         mapContainerClassName="gmap">
         {directions && <DirectionsRenderer directions={directions} />}
       </GoogleMap>
-      <div className="searchDiv">
+      <div
+        className="searchDiv"
+        id="searchDiv">
         <SearchBox
           setLocation={setOrigin}
           name={'Origin'}
@@ -60,6 +65,9 @@ export default function Hero() {
           setLocation={addWaypoints}
           name={'Stop'}
         />
+
+        <AddStopBtn />
+
         <SearchBox
           setLocation={setDestination}
           name={'Destination'}

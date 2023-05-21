@@ -1,7 +1,6 @@
 .display-div {
-  position: absolute;
-  top: 505px;
-  left: 156px;
+  margin-top: 50px;
+  margin-left: 156px;
   /* $neutralWhite */
 
   background: #ffffff;
