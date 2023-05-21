@@ -13,6 +13,13 @@ export default function Hero() {
 
   const [origin, setOrigin] = useState();
   const [destination, setDestination] = useState();
+  const [waypoints, setWaypoints] = useState([]);
+
+  function addWaypoints(waypoint) {
+    setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
+  }
+
+  console.log(waypoints);
 
   //   if (directions) distance = directions.routes[0].legs[0].distance.text;
 
@@ -25,31 +32,36 @@ export default function Hero() {
         mapContainerClassName="gmap">
         {directions && <DirectionsRenderer directions={directions} />}
       </GoogleMap>
-      {/* Search Box for Setting Origin */}
-      <SearchBox
-        setLocation={setOrigin}
-        name={'origin'}
-      />
-      {/* Search Box for setting destination */}
-      <SearchBox
-        setLocation={setDestination}
-        name={'destination'}
-      />
+      <div className="searchDiv">
+        <SearchBox
+          setLocation={setOrigin}
+          name={'Origin'}
+        />
+        <SearchBox
+          setLocation={addWaypoints}
+          name={'Stop'}
+        />
+        <SearchBox
+          setLocation={setDestination}
+          name={'Destination'}
+        />
+      </div>
 
       <SearchBtn
         setDirections={setDirections}
         origin={origin}
         destination={destination}
+        waypoints={waypoints}
       />
 
-      <Display />
-
-      {directions && (
+      {directions ? (
         <Display
           origin={origin}
           destination={destination}
           distance={directions.routes[0].legs[0].distance.text}
         />
+      ) : (
+        <Display />
       )}
     </>
   );

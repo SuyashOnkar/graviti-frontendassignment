@@ -1,6 +1,7 @@
 .navbar {
   height: 80px;
   background: #ffffff;
+  position: sticky;
 }
 
 .navbar-logo {

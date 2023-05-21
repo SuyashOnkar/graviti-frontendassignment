@@ -31,15 +31,16 @@ export default function SearchBox({ name, setLocation }) {
         <ComboboxInput
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          className="inputBox"
+          className="combobox-input"
         />
-        <ComboboxPopover className="combo-popover">
-          <ComboboxList>
+        <ComboboxPopover className="combobox-popover">
+          <ComboboxList className="combobox-list">
             {status === 'OK' &&
-              data.map(({ place_id, description }) => (
+              data.slice(0, 3).map(({ place_id, description }) => (
                 <ComboboxOption
                   key={place_id}
                   value={description}
+                  className="combobox-option"
                 />
               ))}
           </ComboboxList>

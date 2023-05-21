@@ -5,3 +5,12 @@
   width: 560px;
   height: 511px;
 }
+
+.searchDiv {
+  margin-top: 90px;
+  margin-left: 156px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}

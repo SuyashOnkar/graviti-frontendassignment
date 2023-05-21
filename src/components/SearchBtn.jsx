@@ -1,11 +1,13 @@
 import './SearchBtn.css';
 
-export default function SearchBtn({ setDirections, origin, destination }) {
+export default function SearchBtn({ setDirections, origin, destination, waypoints }) {
   function fetchDirections() {
     const service = new google.maps.DirectionsService();
     service.route(
       {
         origin: origin,
+        waypoints: waypoints,
+        optimizeWaypoints: true,
         destination: destination,
         travelMode: google.maps.TravelMode.DRIVING,
       },

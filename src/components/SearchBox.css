@@ -1,9 +1,35 @@
 .searchArea {
-  position: absolute;
-  top: 170px;
-  left: 156px;
+  display: flex;
+  flex-direction: column;
 }
 
-.combo-popover {
+.searchArea-name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  padding-bottom: 3px;
+  padding-left: 2px;
+}
+
+.combobox-input {
+  width: 250px;
+  height: 45px;
+  border: 1px solid #dcddec;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+
+.combobox-popover {
   background-color: white;
+  overflow: hidden;
+
+  z-index: 50;
+}
+
+.combobox-list {
+  border-radius: 20px;
+}
+
+.combobox-option {
+  cursor: pointer;
 }
