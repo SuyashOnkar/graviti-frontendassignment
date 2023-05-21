@@ -29,7 +29,6 @@ export default function SearchBtn({
         if (status === 'OK' && result) {
           console.log(result);
           setDirections(result);
-          calculateDistance();
         }
       }
     );

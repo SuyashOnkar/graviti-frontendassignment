@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './Hero.css';
 import { GoogleMap, Marker, DirectionsRenderer } from '@react-google-maps/api';
 import SearchBox from './SearchBox';
@@ -25,6 +25,12 @@ export default function Hero() {
     });
     setDistance(sum);
   }
+
+  useEffect(() => {
+    if (directions) {
+      calculateDistance();
+    }
+  }, [directions]);
 
   function addWaypoints(waypoint) {
     setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
