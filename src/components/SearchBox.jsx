@@ -19,7 +19,6 @@ export default function SearchBox({ name, setLocation }) {
   const handleSelect = async (address) => {
     setValue(address, false);
     clearSuggestions();
-
     setLocation(address);
   };
 

@@ -26,8 +26,25 @@ export default function Hero() {
     <SearchBox
       setLocation={addWaypoints}
       name="Stop"
+      key={crypto.randomUUID()}
     />,
   ]);
+
+  function setTotalStopsFn() {
+    setTotalStops([
+      ...totalStops,
+      <SearchBox
+        setLocation={addWaypoints}
+        name="Stop"
+        key={crypto.randomUUID()}
+      />,
+    ]);
+  }
+
+  function addWaypoints(waypoint) {
+    setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
+  }
+  console.log(waypoints);
 
   function calculateDistance() {
     let sum = 0;
@@ -60,10 +77,6 @@ export default function Hero() {
     }
   }, [directions]);
 
-  function addWaypoints(waypoint) {
-    setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
-  }
-
   return (
     <>
       <GoogleMap
@@ -84,7 +97,7 @@ export default function Hero() {
 
         <AddStopBtn
           totalStops={totalStops}
-          setTotalStops={setTotalStops}
+          setTotalStopsFn={setTotalStopsFn}
         />
 
         <SearchBox
