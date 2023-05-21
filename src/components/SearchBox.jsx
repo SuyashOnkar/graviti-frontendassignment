@@ -43,7 +43,7 @@ export default function SearchBox({ name, setLocation }) {
           portal={false}>
           <ComboboxList className="combobox-list">
             {status === 'OK' &&
-              data.slice(0, 5).map(({ place_id, description }) => (
+              data.slice(0, 4).map(({ place_id, description }) => (
                 <ComboboxOption
                   key={place_id}
                   value={description}
