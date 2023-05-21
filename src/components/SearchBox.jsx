@@ -29,7 +29,7 @@ export default function SearchBox({ name, setLocation }) {
       <Combobox
         onSelect={handleSelect}
         className="combobox">
-        <div className={name}></div>
+        <div className={name} />
         <ComboboxInput
           value={value}
           onChange={(e) => setValue(e.target.value)}

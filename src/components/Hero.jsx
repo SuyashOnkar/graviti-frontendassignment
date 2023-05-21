@@ -110,7 +110,7 @@ export default function Hero() {
       ) : (
         <Display />
       )}
-      <footer></footer>
+      <footer />
     </>
   );
 }

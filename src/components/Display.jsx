@@ -1,7 +1,6 @@
 import './Display.css';
 
 export default function Display({ origin, destination, distance, eta }) {
-  console.log(distance);
   return (
     <div className="display-div">
       <div className="display-distance">

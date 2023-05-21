@@ -11,7 +11,7 @@ export default function AddStopBtn({ totalStops, setTotalStops }) {
       <div
         className="container"
         onClick={handleClick}>
-        <div className="addStop-icon"></div>
+        <div className="addStop-icon" />
         <div className="addStop-text">Add another stop</div>
       </div>
     </div>
