@@ -14,7 +14,7 @@ export default function SearchBox({ name, setLocation }) {
     setValue,
     suggestions: { status, data },
     clearSuggestions,
-  } = usePlacesAutocomplete();
+  } = usePlacesAutocomplete({ requestOptions: { region: 'in' } });
 
   const handleSelect = async (address) => {
     setValue(address, false);

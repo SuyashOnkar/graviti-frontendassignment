@@ -9,7 +9,13 @@ import AddStopBtn from './AddStopBtn';
 export default function Hero() {
   const center = useMemo(() => ({ lat: 20, lng: 77 }), []);
   const options = useMemo(
-    () => ({ disableDefaultUI: true, clickableIcons: false, zoomControl: false }),
+    () => ({
+      disableDefaultUI: true,
+      clickableIcons: false,
+      zoomControl: false,
+      noClear: true,
+      scrollwheel: true,
+    }),
     []
   );
 
@@ -44,7 +50,6 @@ export default function Hero() {
   function addWaypoints(waypoint) {
     setWaypoints([...waypoints, { location: waypoint, stopover: true }]);
   }
-  console.log(waypoints);
 
   function calculateDistance() {
     let sum = 0;
